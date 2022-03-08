@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">reign-test</string>
+    <string name="txt_back">Atras</string>
+    <string name="description_back">Volver a la lista.</string>
+    <string name="default_author">Julio Perez</string>
+    <string name="default_date">12 min</string>
+    <string name="default_separator">-</string>
+    <string name="default_post_title">Lorem ipsum dolor sit amet, tractatos percipitur sea id, alia disputationi has te, sed cu elit disputando neglegentur. Pri te utroque invidunt.</string>
+</resources>

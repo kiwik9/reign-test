@@ -57,16 +57,12 @@ class MainActivity : BaseActivity(), PostViewListener {
     }
 
     override fun onSuccessGetPost() {
-        runOnUiThread {
-            binding.swipeRefresh.isRefreshing = false
-        }
+        binding.swipeRefresh.isRefreshing = false
     }
 
     override fun onErrorGetPost() {
-        runOnUiThread {
-            binding.swipeRefresh.isRefreshing = false
-            showMessage("Error al obtener los datos.")
-        }
+        binding.swipeRefresh.isRefreshing = false
+        showMessage("Error al obtener los datos.")
     }
 
     private fun initializeRefreshLayout() {

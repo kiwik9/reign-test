@@ -24,10 +24,10 @@ class PostViewModel : BaseViewModel() {
     fun getPostFromServer() = viewModelScope.launch {
         val result = dataRepository.getPostFromServer()
         if (result.isNull() or result?.post.isNull()) {
-            listenerPost.onErrorGetPost()
+            return@launch listenerPost.onErrorGetPost()
         } else {
             dataRepository.insertPost(*PostMapper().transformToPost(result!!.post!!).toTypedArray())
-            listenerPost.onSuccessGetPost()
+            return@launch listenerPost.onSuccessGetPost()
         }
     }
 

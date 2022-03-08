@@ -3,7 +3,6 @@ package io.kiwik.reign.utilities
 import org.joda.time.DateTime
 import org.joda.time.Minutes
 import org.joda.time.format.DateTimeFormat
-import java.text.SimpleDateFormat
 import java.util.*
 
 
@@ -14,6 +13,7 @@ fun String.toDateTime(format: String): DateTime {
 fun Long?.toDate(): Date? {
     return if (this != null) Date(this) else null
 }
+
 fun Long?.toDateTime(): DateTime? {
     return if (this != null) DateTime(this) else null
 }

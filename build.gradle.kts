@@ -2,21 +2,15 @@
 
 buildscript {
     val kotlin_version by extra("1.3.72")
-    // val kotlinVersion = "1.3.50"
     val navVersion = "2.1.0"
 
     repositories {
         google()
         jcenter()
-        maven { url = uri("https://maven.google.com/") }
-        maven { url = uri("https://jitpack.io") }
-        maven { url = uri("https://maven.fabric.io/public") }
     }
     dependencies {
-        classpath("com.android.tools.build:gradle:4.0.1")
+        classpath("com.android.tools.build:gradle:4.0.2")
         classpath(kotlin("gradle-plugin", kotlin_version))
-        classpath ("com.google.firebase:firebase-crashlytics-gradle:2.2.0")
-        classpath("com.google.gms:google-services:4.3.5")
         classpath("androidx.navigation:navigation-safe-args-gradle-plugin:$navVersion")
     }
 }

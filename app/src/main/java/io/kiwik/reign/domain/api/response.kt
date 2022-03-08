@@ -1,10 +1,11 @@
 package io.kiwik.reign.domain.api
 
-import io.kiwik.reign.domain.entities.User
+import com.google.gson.annotations.SerializedName
+import com.squareup.moshi.JsonClass
+import io.kiwik.reign.domain.model.PostModel
 
-data class LoginResponse(
-    var token: String,
-    var message: String,
-    var status: String,
-    var user: User
+@JsonClass(generateAdapter = true)
+data class PostResponse(
+    @SerializedName("hits")
+    var post: List<PostModel>?
 )

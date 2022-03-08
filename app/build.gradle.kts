@@ -58,7 +58,6 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib:${rootProject.extra["kotlin_version"]}")
     kapt(Libs.kapt_moshi_codegen)
     kapt(Libs.kapt_room)
-    kapt(Libs.kapt_glide)
     kapt("com.android.databinding:compiler:3.5.3")
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
     implementation(Libs.kotlin_stdlib_jdk8)
@@ -66,7 +65,6 @@ dependencies {
     implementation(Libs.core_ktx)
     implementation(Libs.constraintlayout)
     implementation(Libs.material)
-    implementation(Libs.vector_drawable)
     implementation(Libs.cardview)
     implementation(Libs.kotlin_logging)
     implementation(Libs.moshi)
@@ -76,12 +74,6 @@ dependencies {
      * Joda time
      */
     implementation(Libs.joda_time)
-
-    /**
-     * Glide
-     */
-    implementation(Libs.glide)
-    kapt(Libs.kapt_glide)
 
     /**
      * Multidex
@@ -130,12 +122,14 @@ dependencies {
 
     implementation(project(":dein"))
 
-    implementation(Libs.apache_commons)
-
     /**
      * Mockk
      */
     testImplementation(Libs.mockk)
+
+    implementation(Libs.recycler_view_swipe)
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation("me.zhanghai.android.materialprogressbar:library:1.6.1")
 
 }
 

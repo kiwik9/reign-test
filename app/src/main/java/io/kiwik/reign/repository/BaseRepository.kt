@@ -12,6 +12,6 @@ abstract class BaseRepository : KoinComponent {
 
 val REPOSITORY_LIST by lazy {
     arrayOf(
-        DataRepository()
+        PostRepository()
     )
 }

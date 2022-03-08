@@ -29,7 +29,7 @@ class AppDatabaseModule : AppModule {
     private val TAG = this::class.java.simpleName
     override fun initialize() {
         loadKoinModule {
-            single { AppDatabase.buildDatabaseDev(androidContext()) }.also {
+            single { AppDatabase.buildDatabase(androidContext()) }.also {
                 Log.i("[Koin]:$TAG", "Loading: $it")
             }
         }

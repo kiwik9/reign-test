@@ -1,7 +1,5 @@
 package io.kiwik.reign.domain.api
 
-import io.kiwik.reign.model.preference.AppSession
-
 object ApiUtils {
     private var iRestService: IRestService? = null
 
@@ -10,8 +8,6 @@ object ApiUtils {
     }
 
     private fun buildIRestService(): IRestService {
-        val token = AppSession.values.loggedUser?.name
-            ?: return RetrofitClient.create(IRestService::class.java)
-        return RetrofitClient.createAuthToken(IRestService::class.java, "Bearer", token)
+        return RetrofitClient.create(IRestService::class.java)
     }
 }

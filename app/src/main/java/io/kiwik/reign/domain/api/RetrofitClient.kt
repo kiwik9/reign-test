@@ -1,7 +1,6 @@
 package io.kiwik.reign.domain.api
 
 import android.text.TextUtils
-import com.squareup.moshi.Moshi
 import io.kiwik.reign.BuildConfig
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
@@ -9,14 +8,9 @@ import okhttp3.Request
 import okhttp3.Response
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
-import retrofit2.converter.moshi.MoshiConverterFactory
+import retrofit2.converter.gson.GsonConverterFactory
 import java.io.IOException
-import java.net.InetAddress
-import java.net.Socket
-import java.net.UnknownHostException
 import java.util.concurrent.TimeUnit
-import javax.net.ssl.SSLSocket
-import javax.net.ssl.SSLSocketFactory
 
 object RetrofitClient {
 
@@ -24,9 +18,6 @@ object RetrofitClient {
     private var BASE_URL = BuildConfig.BASE_URL + "/api/"
 
     lateinit var retrofit: Retrofit
-    private val moshi = Moshi.Builder().add(
-        CustomDateTimeAdapter()
-    ).build()
     private val logging = HttpLoggingInterceptor()
         .setLevel(HttpLoggingInterceptor.Level.BODY)
 
@@ -38,11 +29,10 @@ object RetrofitClient {
 
     private var builder: Retrofit.Builder = Retrofit.Builder()
         .baseUrl(BASE_URL)
-        .addConverterFactory(MoshiConverterFactory.create(moshi))
+        .addConverterFactory(GsonConverterFactory.create())
 
     fun <S> create(serviceClass: Class<S>): S {
         return create(serviceClass, "", "")
-
     }
 
     fun <S> createAuthToken(serviceClass: Class<S>, typeAuth: String, tokenAuth: String): S {

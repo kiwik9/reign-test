@@ -19,13 +19,13 @@ object Config {
         val config =
             mapOf(
                 "dev" to ProjectProperty(
-                    "\"\""
+                    "\"https://hn.algolia.com\""
                 ),
                 "prod" to ProjectProperty(
-                    "\"\""
+                    "\"https://hn.algolia.com\""
                 ),
                 "cal" to ProjectProperty(
-                    "\"\""
+                    "\"https://hn.algolia.com\""
                 )
             )
     }

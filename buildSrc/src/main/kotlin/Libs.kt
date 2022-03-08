@@ -103,4 +103,14 @@ object Libs {
     const val recycler_view_swipe =
         "com.github.xabaras:RecyclerViewSwipeDecorator:" + Versions.recycler_view_swipe
 
+    const val gson_converter =
+        "com.squareup.retrofit2:converter-gson:" + Versions.gson_converter
+
+    const val material_progress_bar =
+        "me.zhanghai.android.materialprogressbar:library:" + Versions.material_progress_bar
+    const val junit_ktx =
+        "androidx.test.ext:junit-ktx:" + Versions.junit_ktx
+    const val espresso_contrib =
+        "androidx.test.espresso:espresso-contrib:" + Versions.espresso_contrib
+
 }

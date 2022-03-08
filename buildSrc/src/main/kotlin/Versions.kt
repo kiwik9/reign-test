@@ -62,6 +62,10 @@ object Versions {
     const val carousel_view = "0.1.5"
 
     const val recycler_view_swipe = "1.4"
+    const val gson_converter = "2.9.0"
+    const val material_progress_bar = "1.6.1"
+    const val junit_ktx = "1.1.3"
+    const val espresso_contrib = "3.4.0"
 }
 
 /**

@@ -128,8 +128,10 @@ dependencies {
     testImplementation(Libs.mockk)
 
     implementation(Libs.recycler_view_swipe)
-    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
-    implementation("me.zhanghai.android.materialprogressbar:library:1.6.1")
+    implementation(Libs.gson_converter)
+    implementation(Libs.material_progress_bar)
+    implementation(Libs.junit_ktx)
+    implementation(Libs.espresso_contrib)
 
 }
 

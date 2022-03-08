@@ -89,6 +89,7 @@ class MainActivity : BaseActivity(), PostViewListener {
         }
 
         adapter.setOnDeleteItemListener { pos, item ->
+            postViewModel.removePost(item.storyId)
             showSnackToRestore(pos, item)
         }
     }
@@ -116,6 +117,7 @@ class MainActivity : BaseActivity(), PostViewListener {
         )
             .setAction("Restaurar") {
                 adapter.restoreItem(pos, item)
+                postViewModel.insertPost(item)
             }
             .show()
     }

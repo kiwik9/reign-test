@@ -16,4 +16,7 @@ interface PostDao {
     @Query("select * from m_post order by createdAt desc")
     fun getPost(): LiveData<List<Post>>
 
+    @Query("delete from m_post where storyId = :id ")
+    suspend fun removePost(id: Int)
+
 }
